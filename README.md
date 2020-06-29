@@ -1,76 +1,68 @@
-# Тестовое задание для разработчика интерфейсов
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Для внутреннего портала нужно сделать виджет списка книг, рекомендованных к чтению.
+## Available Scripts
 
-Есть минималистичный дизайн — он простой, но аккуратный. Шрифт — Roboto, цвета — #000 (текст), #999 (бордеры) и #ddd (фон тегов). Никакой другой информации кроме изображений ниже дизайнер нам не дал.
+In the project directory, you can run:
 
-Книги делятся на три таба: «To read», «In progress», «Done». Изначально все книги в «To read», но пользователь может их перемещать.
+### `npm start`
 
-Из статуса «To read» книгу можно перевести в «In progress» кнопкой `start reading →`, расположенной справа от названия.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-<p align="center">
-  <img src="./design/0-main-screen.png" width="512" />
-</p>
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-Из статуса «In progress» можно перевести в «Done» кнопкой `finish reading →`.
+### `npm test`
 
-<p align="center">
-  <img src="./design/1-inprogress-item.png" width="512" />
-</p>
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Из статуса «Done» можно перевести в обратно в «To read» кнопкой `return in «to read» ↲`.
+### `npm run build`
 
-<p align="center">
-  <img src="./design/2-done-item.png" width="512" />
-</p>
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Дизайн пустого списка:
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-<p align="center">
-  <img src="./design/3-empty-screen.png" width="512" />
-</p>
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Клики по тегам включают фильтрацию по ним. Обрати внимание, счётчик в табе показывает количество книг до фильтрации, а не после:
+### `npm run eject`
 
-<p align="center">
-  <img src="./design/4-filtered-screen.png" width="512" />
-</p>
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Книги хранятся в JSON — см. в папку [/data/](/data/). Все поля обязательные.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```json
-{
-  "items": [
-    {
-      "id": "uniq id",
-      "author": "Author",
-      "title": "Title",
-      "description": "Description",
-      "tags": ["one", "another"]
-    }
-  ]
-}
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Требования
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-- Обязательно используй React.
-- Поддерживаемые браузеры — свежий Google Chrome (десктопный и мобильный).
-- По ширине виджет должен тянуться от 480px до 1280px (в дизайнах показаны 480px).
-- Данные нужно запрашивать. Например, через fetch. Можно прямо [отсюда](https://raw.githubusercontent.com/lastw/test-task/master/data/10-items.json).
-- В табах должны быть счётчики, показывающие количество элементов в этом статусе _до фильтрации по тегам_.
-- Текущий таб и выбранные фильтры должны попадать в URL и в историю, примеры URL:
-  - /
-  - /?tab=inprogress
-  - /?tab=done
-  - /?tags=js,css
-  - /?tab=done&tags=js,css
-- При переходах по истории должны меняться текущий таб и выбранные фильтры, но не статусы книг.
-- Приложение должно открываться в состоянии, указанном в URL — /?tab=done&tags=js откроет таб «Done» с фильтром по тегу «js».
-- Между перезагрузками страницы должны сохраняться статусы книг — если перевести книгу в «Done», закрыть страницу и открыть снова, книга всё ещё будет в «Done». Но в URL статусы книг попадать не должны.
-- Если есть вопросы по дизайну, и ответа нет в требованиях, принимай решения самостоятельно.
-- (\* _задание со звёздочкой, делай только если справился со всем остальным_) Книг может быть очень много. Мы сгенерировали 30000 книг — [30000-items.json](./data/30000-items.json). Хочется, чтобы даже при таком количестве книг приложение не тормозило.
+## Learn More
 
-Делать все пункты не обязательно. Бери не количеством, а качеством. Сделай в первую очередь то, что лучше всего знаешь и в чём уверен.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Не делай тестовое круглые сутки, а выдели разумное и комфортное для себя время. Недостающие пункты мы можем обсудить на собеседовании. Напиши нам свои мысли об этих пунктах.
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
