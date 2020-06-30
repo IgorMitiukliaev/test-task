@@ -1,5 +1,12 @@
 import '../constants/ActionTypes'
-import {LOAD_DATA, TOGGLE_TAG, CHANGE_ITEM_STATUS, SET_ACTIVE_TAB, CLEAR_ACTIVE_TAGS} from "../constants/ActionTypes";
+import {
+    FETCH_DATA,
+    LOAD_DATA,
+    TOGGLE_TAG,
+    CHANGE_ITEM_STATUS,
+    SET_ACTIVE_TAB,
+    CLEAR_ACTIVE_TAGS
+} from "../constants/ActionTypes";
 import {readStatus} from "../actions";
 
 export const initialState =
@@ -19,6 +26,14 @@ export const initialState =
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
+        case FETCH_DATA: {
+            return {
+                ...state,
+
+            };
+
+        }
+
         case LOAD_DATA: {
             const {items} = {...action};
             const itemsToRead = items.map(item => item.id);

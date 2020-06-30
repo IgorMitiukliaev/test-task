@@ -1,3 +1,5 @@
+
+export const FETCH_DATA = 'FETCH_DATA';
 export const LOAD_DATA = 'LOAD_DATA';
 export const TOGGLE_TAG = 'TOGGLE_TAG';
 export const CHANGE_ITEM_STATUS = 'CHANGE_ITEM_STATUS';

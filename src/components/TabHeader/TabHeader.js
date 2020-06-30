@@ -4,13 +4,15 @@ import {connect} from 'react-redux'
 import {setActiveTab} from '../../actions'
 
 const TabHeader = (props) => {
+
     const {name, activeTab, setActiveTab, tabItemsCounter} = {...props};
     return (
         <NavItem>
             <NavLink
                 className={(activeTab === name) ? 'active' : null}
                 onClick={() => setActiveTab(name)}
-            >{name} ({tabItemsCounter[name]})</NavLink>
+            > {name} ({tabItemsCounter[name]})
+            </NavLink>
         </NavItem>)
 };
 

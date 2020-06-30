@@ -1,9 +1,15 @@
 import React from 'react'
 import {connect} from "react-redux";
 import Item from "../Item/Item";
-import {readStatus} from "../../actions";
+import {fetchData, readStatus} from "../../actions";
+import {action} from "../../store";
+import {FETCH_DATA} from "../../constants/ActionTypes";
 
 class ItemsList extends React.Component {
+    componentWillMount() {
+        // this.props.fetchData();
+        action({type: FETCH_DATA});
+    }
 
 
     render() {
@@ -63,5 +69,7 @@ const mapStateToProps = state => ({
     itemsDone: state.itemsDone,
 });
 
-export default connect(mapStateToProps)(ItemsList);
+const mapDispatchToProps = {fetchData};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemsList);
 
