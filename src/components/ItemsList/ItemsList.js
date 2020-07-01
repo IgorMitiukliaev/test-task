@@ -8,7 +8,7 @@ import {FETCH_DATA} from "../../constants/ActionTypes";
 class ItemsList extends React.Component {
     componentWillMount() {
         // this.props.fetchData();
-        action({type: FETCH_DATA});
+        // action({type: FETCH_DATA});
     }
 
 

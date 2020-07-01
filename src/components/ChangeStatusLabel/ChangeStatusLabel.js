@@ -23,7 +23,7 @@ const ChangeStatusLabel = (props) => {
             break;
     }
     return (
-        <p onClick={() => changeItemStatus(item,activeTab)}>{label}</p>)
+        <p onClick={() => changeItemStatus(activeTab,item)}>{label}</p>)
 };
 
 const mapStateToProps = state => ({
