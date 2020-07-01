@@ -3,7 +3,9 @@ import {changeItemStatus} from "../../actions";
 import {connect} from "react-redux";
 import {readStatus} from "../../actions";
 
+
 const ChangeStatusLabel = (props) => {
+
     const {activeTab, changeItemStatus, item} = props;
     let label;
     switch (activeTab) {
@@ -22,8 +24,10 @@ const ChangeStatusLabel = (props) => {
         default:
             break;
     }
+
+
     return (
-        <p onClick={() => changeItemStatus(activeTab,item)}>{label}</p>)
+        <p onClick={() => changeItemStatus(activeTab, item)}>{label}</p>)
 };
 
 const mapStateToProps = state => ({

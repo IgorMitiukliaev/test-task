@@ -1,19 +1,22 @@
 import React from 'react'
 import {connect} from "react-redux";
 import Item from "../Item/Item";
-import {fetchData, readStatus} from "../../actions";
-import {action} from "../../store";
-import {FETCH_DATA} from "../../constants/ActionTypes";
+import {fetchData, setActiveTab, setActiveTags, readStatus} from "../../actions";
+
 
 class ItemsList extends React.Component {
-    componentWillMount() {
-        // this.props.fetchData();
-        // action({type: FETCH_DATA});
+    componentDidMount() {
+        window.addEventListener("popstate", e => this.getURLParams(e));
     }
 
+    getURLParams(event) {
+        console.log('back / forward')
+        //TODO  on popstate should read tab/tags from event.state and re-render - HOW?
+    }
 
     render() {
         const {items, activeTab, activeTags, itemsToRead, itemsInProgress, itemsDone} = {...this.props};
+
         const getArraysIntersection = (array1, array2) => {
             if (array2.length > 0) {
                 return array1.filter(value => array2.includes(value))
@@ -69,7 +72,7 @@ const mapStateToProps = state => ({
     itemsDone: state.itemsDone,
 });
 
-const mapDispatchToProps = {fetchData};
+const mapDispatchToProps = {fetchData, setActiveTab, setActiveTags};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemsList);
 

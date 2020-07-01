@@ -5,7 +5,8 @@ import {
     TOGGLE_TAG,
     CHANGE_ITEM_STATUS,
     SET_ACTIVE_TAB,
-    CLEAR_ACTIVE_TAGS
+    CLEAR_ACTIVE_TAGS,
+    SET_ACTIVE_TAGS
 } from "../constants/ActionTypes";
 import {readStatus} from "../actions";
 
@@ -29,9 +30,7 @@ export default function reducer(state = initialState, action) {
         case FETCH_DATA: {
             return {
                 ...state,
-
             };
-
         }
 
         case LOAD_DATA: {
@@ -122,6 +121,15 @@ export default function reducer(state = initialState, action) {
                 activeTags: []
             }
         }
+
+        case SET_ACTIVE_TAGS: {
+            const {activeTags=[]} = {...action};
+            return {
+                ...state,
+                activeTags: activeTags
+            }
+        }
+
 
         default:
             return state

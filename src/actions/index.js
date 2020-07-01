@@ -4,6 +4,7 @@ export const fetchData = () => ({type: types.FETCH_DATA});
 export const loadData = (items) => ({type: types.LOAD_DATA, items});
 export const setActiveTab = (tab) => ({type: types.SET_ACTIVE_TAB, tab});
 export const toggleTag = (tag) => ({type: types.TOGGLE_TAG, tag});
+export const setActiveTags = (activeTags)=>({type: types.SET_ACTIVE_TAGS, activeTags})
 export const changeItemStatus = (status, item) => ({
     type: types.CHANGE_ITEM_STATUS,
     status,

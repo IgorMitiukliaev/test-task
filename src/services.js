@@ -1,4 +1,8 @@
+import React from "react";
+
+
 export function getURLParams() {
+
     const params = new URLSearchParams(window.location.search);
     const activeTags = params.getAll('tags');
     const activeTab = params.get('tab');
@@ -6,13 +10,12 @@ export function getURLParams() {
 }
 
 export function setURLParams(payload) {
+
     const params = new URLSearchParams(window.location.search);
     const {activeTags = [], activeTab = null} = {...payload};
     params.set('tags', activeTags.join(','));
     params.set('tab', activeTab);
     window.history.pushState({}, '', `${window.location.pathname}?${params}`);
-
-    return null;
 }
 
 export function saveReadingProgress(payload) {
